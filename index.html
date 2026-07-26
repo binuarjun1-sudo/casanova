@@ -48,7 +48,7 @@
         <li><a href="#timeline" class="nav-link">Timeline</a></li>
         <li><a href="#gallery" class="nav-link">Gallery</a></li>
         <li><a href="#team" class="nav-link">Team</a></li>
-        <li><a href="https://www.instagram.com/casanova.stc?igsh=MTZ1NHF5aTlxZDFnag==" target="_blank" rel="noopener" class="nav-link nav-link--icon">Instagram</a></li>
+        <li><a href="#" id="navInstagram" target="_blank" rel="noopener" class="nav-link nav-link--icon">Instagram</a></li>
       </ul>
     </nav>
   </header>
@@ -64,9 +64,9 @@
 
       <div class="hero-content">
         <img src="assets/logo.png" alt="CASANOVA emblem" class="hero-logo" onerror="this.style.display='none'">
-        <p class="hero-eyebrow">B.COM &nbsp;·&nbsp; 2026 — 2029</p>
-        <h1 class="hero-title">WELCOME TO<br><span>CASANOVA</span></h1>
-        <p class="hero-subtitle">More Than A Batch.<br>A Legacy.</p>
+        <p class="hero-eyebrow" id="heroEyebrow"></p>
+        <h1 class="hero-title" id="heroTitle"></h1>
+        <p class="hero-subtitle" id="heroSubtitle"></p>
       </div>
 
       <a href="#about" class="scroll-cue" aria-label="Scroll to explore">
@@ -80,40 +80,17 @@
     <!-- ============================= -->
     <section id="about" class="section about">
       <div class="section-inner">
-        <p class="section-eyebrow reveal">Est. 2026</p>
-        <h2 class="section-title reveal">WHO WE ARE</h2>
+        <p class="section-eyebrow reveal" id="aboutEyebrow"></p>
+        <h2 class="section-title reveal" id="aboutTitle"></h2>
 
-        <div class="about-grid">
-          <p class="about-text reveal">
-            CASANOVA is the official digital identity of the B.Com 2026–2029 batch.
-          </p>
-          <p class="about-text reveal">
-            We are dreamers, creators, athletes, designers, leaders and future professionals — brought together by one classroom and shaped into one story.
-          </p>
-          <p class="about-text reveal">
-            This website preserves our memories, our achievements, and the journey we're building together, one year at a time.
-          </p>
+        <div class="about-grid" id="aboutParagraphs">
+          <!-- Populated from content.json -->
         </div>
       </div>
 
       <!-- STATISTICS -->
-      <div class="stats">
-        <div class="stat-card reveal">
-          <span class="stat-number" data-target="65">0</span><span class="stat-plus">+</span>
-          <p class="stat-label">Students</p>
-        </div>
-        <div class="stat-card reveal">
-          <span class="stat-number" data-target="20">0</span><span class="stat-plus">+</span>
-          <p class="stat-label">Events</p>
-        </div>
-        <div class="stat-card reveal">
-          <span class="stat-number" data-target="500">0</span><span class="stat-plus">+</span>
-          <p class="stat-label">Photos</p>
-        </div>
-        <div class="stat-card reveal">
-          <span class="stat-number" data-target="3">0</span>
-          <p class="stat-label">Years Together</p>
-        </div>
+      <div class="stats" id="statsGrid">
+        <!-- Populated from content.json -->
       </div>
     </section>
 
@@ -128,59 +105,8 @@
 
       <div class="timeline">
         <div class="timeline-line" aria-hidden="true"></div>
-
-        <div class="timeline-item reveal">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card">
-            <span class="timeline-tag">Year One</span>
-            <h3>College Begins</h3>
-            <p>New faces, new classrooms — the first chapter of CASANOVA is written.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item reveal">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card">
-            <span class="timeline-tag">Orientation</span>
-            <h3>Freshers</h3>
-            <p>The night the batch stopped being strangers and became a family.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item reveal">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card">
-            <span class="timeline-tag">Culture</span>
-            <h3>Commerce Fest</h3>
-            <p>Stalls, stages and spreadsheets — commerce came alive for three days.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item reveal">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card">
-            <span class="timeline-tag">Sport</span>
-            <h3>Sports Meet</h3>
-            <p>Jerseys on, egos aside — CASANOVA competed as one team.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item reveal">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card">
-            <span class="timeline-tag">Field Study</span>
-            <h3>Industrial Visit</h3>
-            <p>Textbooks met the real world, and the real world took notes back.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item reveal">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card">
-            <span class="timeline-tag">Year Three</span>
-            <h3>Farewell</h3>
-            <p>Three years, one legacy — the final bow of the CASANOVA batch.</p>
-          </div>
+        <div id="timelineItems">
+          <!-- Populated from content.json -->
         </div>
       </div>
     </section>
@@ -195,7 +121,7 @@
       </div>
 
       <div class="gallery-grid" id="galleryGrid">
-        <!-- Populated via script.js from a placeholder image set -->
+        <!-- Populated from content.json -->
       </div>
     </section>
 
@@ -216,27 +142,8 @@
         <h2 class="section-title reveal">TEAM CASANOVA</h2>
       </div>
 
-      <div class="team-grid">
-        <div class="team-card reveal">
-          <div class="team-photo"><img src="assets/team/member1.jpg" alt="" onerror="this.parentElement.classList.add('no-img')"></div>
-          <h3 class="team-name">Aarav Menon</h3>
-          <p class="team-role">Batch Representative</p>
-        </div>
-        <div class="team-card reveal">
-          <div class="team-photo"><img src="assets/team/member2.jpg" alt="" onerror="this.parentElement.classList.add('no-img')"></div>
-          <h3 class="team-name">Diya Nair</h3>
-          <p class="team-role">Creative Director</p>
-        </div>
-        <div class="team-card reveal">
-          <div class="team-photo"><img src="assets/team/member3.jpg" alt="" onerror="this.parentElement.classList.add('no-img')"></div>
-          <h3 class="team-name">Rohan Iyer</h3>
-          <p class="team-role">Events Lead</p>
-        </div>
-        <div class="team-card reveal">
-          <div class="team-photo"><img src="assets/team/member4.jpg" alt="" onerror="this.parentElement.classList.add('no-img')"></div>
-          <h3 class="team-name">Meera Pillai</h3>
-          <p class="team-role">Media &amp; Design</p>
-        </div>
+      <div class="team-grid" id="teamGrid">
+        <!-- Populated from content.json -->
       </div>
     </section>
 
@@ -252,7 +159,7 @@
         </svg>
         <h2 class="section-title">STAY IN THE FRAME</h2>
         <p class="instagram-text">Every moment we don't post here, we post there. Follow along.</p>
-        <a href="https://www.instagram.com/casanova.stc?igsh=MTZ1NHF5aTlxZDFnag==" target="_blank" rel="noopener" class="btn-primary">Follow CASANOVA</a>
+        <a href="#" id="instagramBtn" target="_blank" rel="noopener" class="btn-primary">Follow CASANOVA</a>
       </div>
     </section>
 
@@ -262,10 +169,10 @@
   <!-- FOOTER                        -->
   <!-- ============================= -->
   <footer class="footer">
-    <p class="footer-quote">&ldquo;Every legend begins as a batch.&rdquo;</p>
+    <p class="footer-quote" id="footerQuote"></p>
     <div class="footer-divider"></div>
-    <p class="footer-credit">Crafted with <span class="heart">&hearts;</span> by CASANOVA</p>
-    <p class="footer-meta">B.Com 2026 &mdash; 2029</p>
+    <p class="footer-credit" id="footerCredit"></p>
+    <p class="footer-meta" id="footerMeta"></p>
   </footer>
 
   <!-- GSAP -->

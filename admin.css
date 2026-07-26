@@ -1,0 +1,241 @@
+/* ==========================================================================
+   CASANOVA — Admin Panel styles
+   Loaded after style.css, reuses the same design tokens.
+   ========================================================================== */
+
+.admin-body {
+  background: var(--bg);
+  min-height: 100vh;
+}
+
+/* ----- Header ----- */
+.admin-header {
+  border-bottom: 1px solid var(--border);
+  background: rgba(5, 5, 5, 0.9);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(10px);
+}
+.admin-header-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1.25rem var(--gutter);
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+}
+.admin-logo {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  letter-spacing: 0.1em;
+}
+.admin-tag {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+/* ----- Main layout ----- */
+.admin-main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2.5rem var(--gutter) 6rem;
+}
+
+.admin-intro h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  margin-bottom: 0.75rem;
+}
+.admin-intro p {
+  color: var(--text-secondary);
+  font-weight: 300;
+  max-width: 60ch;
+  line-height: 1.7;
+}
+.admin-intro code {
+  color: var(--text);
+  background: var(--card);
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.85em;
+}
+
+.admin-actions-top {
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.admin-status {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+.admin-status.is-success { color: #ffffff; }
+
+/* ----- Sections ----- */
+.admin-section {
+  margin-top: 2.5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--border);
+}
+.admin-section h2 {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  margin-bottom: 0.5rem;
+}
+.admin-hint {
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  font-weight: 300;
+  margin-bottom: 1.25rem;
+  line-height: 1.6;
+}
+.admin-hint code {
+  background: var(--card);
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+  color: var(--text);
+}
+
+/* ----- Form fields ----- */
+label {
+  display: block;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  color: var(--text-secondary);
+  margin-bottom: 1.1rem;
+}
+label small {
+  color: #777;
+  font-weight: 300;
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+  display: block;
+  width: 100%;
+  margin-top: 0.5rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.75rem 0.9rem;
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  transition: border-color 0.25s ease;
+}
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--border-strong);
+}
+textarea { resize: vertical; }
+
+.admin-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+@media (max-width: 640px) {
+  .admin-row { grid-template-columns: 1fr; }
+}
+
+/* ----- Repeatable rows ----- */
+.admin-repeat-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.admin-repeat-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr auto;
+  gap: 0.6rem;
+  align-items: center;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.85rem;
+}
+.admin-repeat-row input,
+.admin-repeat-row textarea {
+  margin-top: 0;
+}
+
+.admin-repeat-row--stacked {
+  grid-template-columns: 1fr;
+}
+.admin-repeat-row--stacked .admin-btn-remove {
+  justify-self: flex-end;
+}
+
+@media (max-width: 700px) {
+  .admin-repeat-row { grid-template-columns: 1fr; }
+  .admin-btn-remove { justify-self: flex-end; }
+}
+
+.admin-btn-remove {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  line-height: 1;
+  transition: border-color 0.25s ease, color 0.25s ease;
+}
+.admin-btn-remove:hover {
+  border-color: var(--border-strong);
+  color: var(--text);
+}
+
+/* ----- Buttons ----- */
+.admin-btn {
+  border-radius: 100px;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border: 1px solid var(--text);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+.admin-btn-primary {
+  background: #ffffff;
+  color: #000000;
+}
+.admin-btn-primary:hover { background: #e6e6e6; }
+
+.admin-btn-secondary {
+  background: transparent;
+  color: var(--text);
+}
+.admin-btn-secondary:hover { background: rgba(255,255,255,0.08); }
+
+.admin-btn-add {
+  background: transparent;
+  border: 1px dashed var(--border-strong);
+  color: var(--text-secondary);
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-transform: none;
+}
+.admin-btn-add:hover {
+  color: var(--text);
+  border-color: var(--text);
+}
+
+.admin-download-section {
+  text-align: left;
+}

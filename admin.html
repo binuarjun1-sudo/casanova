@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CASANOVA — Admin Panel</title>
+  <meta name="robots" content="noindex, nofollow">
+
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body class="admin-body">
+
+  <header class="admin-header">
+    <div class="admin-header-inner">
+      <span class="admin-logo">CASANOVA</span>
+      <span class="admin-tag">Admin Panel</span>
+    </div>
+  </header>
+
+  <main class="admin-main">
+
+    <div class="admin-intro">
+      <h1>Edit your site content</h1>
+      <p>Fill in the fields below, then download the updated file and upload it to GitHub to replace <code>content.json</code>. Nothing here touches your live site until you upload the new file.</p>
+      <div class="admin-actions-top">
+        <button id="loadBtn" class="admin-btn admin-btn-secondary">↻ Reload current data</button>
+        <span id="loadStatus" class="admin-status"></span>
+      </div>
+    </div>
+
+    <!-- ============================= HERO ============================= -->
+    <section class="admin-section">
+      <h2>Hero Section</h2>
+      <label>Eyebrow text <small>(small line above the title)</small>
+        <input type="text" id="heroEyebrow" placeholder="B.COM · 2026 — 2029">
+      </label>
+      <div class="admin-row">
+        <label>Title — line 1
+          <input type="text" id="heroTitleLine1" placeholder="WELCOME TO">
+        </label>
+        <label>Title — line 2
+          <input type="text" id="heroTitleLine2" placeholder="CASANOVA">
+        </label>
+      </div>
+      <div class="admin-row">
+        <label>Subtitle — line 1
+          <input type="text" id="heroSubtitleLine1" placeholder="More Than A Batch.">
+        </label>
+        <label>Subtitle — line 2
+          <input type="text" id="heroSubtitleLine2" placeholder="A Legacy.">
+        </label>
+      </div>
+    </section>
+
+    <!-- ============================= ABOUT ============================= -->
+    <section class="admin-section">
+      <h2>About Section</h2>
+      <div class="admin-row">
+        <label>Eyebrow <input type="text" id="aboutEyebrow" placeholder="Est. 2026"></label>
+        <label>Title <input type="text" id="aboutTitle" placeholder="WHO WE ARE"></label>
+      </div>
+      <label>Paragraphs <small>(one per line)</small>
+        <textarea id="aboutParagraphs" rows="5" placeholder="First paragraph...&#10;Second paragraph...&#10;Third paragraph..."></textarea>
+      </label>
+    </section>
+
+    <!-- ============================= STATS ============================= -->
+    <section class="admin-section">
+      <h2>Statistics</h2>
+      <p class="admin-hint">Four numbers shown with animated counters.</p>
+      <div id="statsList" class="admin-repeat-list"></div>
+      <button type="button" class="admin-btn admin-btn-add" data-add="stats">+ Add stat</button>
+    </section>
+
+    <!-- ============================= TIMELINE ============================= -->
+    <section class="admin-section">
+      <h2>Timeline</h2>
+      <p class="admin-hint">Each milestone card in your batch's journey.</p>
+      <div id="timelineList" class="admin-repeat-list"></div>
+      <button type="button" class="admin-btn admin-btn-add" data-add="timeline">+ Add timeline event</button>
+    </section>
+
+    <!-- ============================= GALLERY ============================= -->
+    <section class="admin-section">
+      <h2>Gallery Photos</h2>
+      <p class="admin-hint">
+        Upload photos to <code>assets/gallery/</code> on GitHub first, then reference them here as
+        <code>assets/gallery/yourphoto.jpg</code>. You can also paste any direct image URL.
+      </p>
+      <div id="galleryList" class="admin-repeat-list"></div>
+      <button type="button" class="admin-btn admin-btn-add" data-add="gallery">+ Add photo</button>
+    </section>
+
+    <!-- ============================= TEAM ============================= -->
+    <section class="admin-section">
+      <h2>Team</h2>
+      <p class="admin-hint">
+        Upload photos to <code>assets/team/</code> on GitHub first, then reference them here as
+        <code>assets/team/yourphoto.jpg</code>.
+      </p>
+      <div id="teamList" class="admin-repeat-list"></div>
+      <button type="button" class="admin-btn admin-btn-add" data-add="team">+ Add team member</button>
+    </section>
+
+    <!-- ============================= INSTAGRAM ============================= -->
+    <section class="admin-section">
+      <h2>Instagram Link</h2>
+      <label>Profile URL
+        <input type="text" id="instagramLink" placeholder="https://www.instagram.com/your_batch">
+      </label>
+    </section>
+
+    <!-- ============================= FOOTER ============================= -->
+    <section class="admin-section">
+      <h2>Footer</h2>
+      <label>Quote <input type="text" id="footerQuote" placeholder="Every legend begins as a batch."></label>
+      <label>Credit line <input type="text" id="footerCredit" placeholder="Crafted with ❤️ by CASANOVA"></label>
+      <label>Meta line <input type="text" id="footerMeta" placeholder="B.Com 2026 — 2029"></label>
+    </section>
+
+    <!-- ============================= DOWNLOAD ============================= -->
+    <section class="admin-section admin-download-section">
+      <h2>Save your changes</h2>
+      <p class="admin-hint">
+        This downloads a file named <strong>content.json</strong>. Upload it to your GitHub repo
+        (same place as <code>index.html</code>) to replace the old one — that updates your live site.
+      </p>
+      <button id="downloadBtn" class="admin-btn admin-btn-primary">⬇ Download content.json</button>
+      <span id="downloadStatus" class="admin-status"></span>
+    </section>
+
+  </main>
+
+  <!-- Templates for repeatable rows -->
+  <template id="statRowTemplate">
+    <div class="admin-repeat-row" data-type="stats">
+      <input type="number" class="stat-target" placeholder="Number, e.g. 65">
+      <input type="text" class="stat-suffix" placeholder="Suffix, e.g. + (leave blank for none)">
+      <input type="text" class="stat-label" placeholder="Label, e.g. Students">
+      <button type="button" class="admin-btn-remove" title="Remove">&times;</button>
+    </div>
+  </template>
+
+  <template id="timelineRowTemplate">
+    <div class="admin-repeat-row admin-repeat-row--stacked" data-type="timeline">
+      <input type="text" class="tl-tag" placeholder="Tag, e.g. Year One">
+      <input type="text" class="tl-title" placeholder="Title, e.g. College Begins">
+      <textarea class="tl-text" rows="2" placeholder="Short description..."></textarea>
+      <button type="button" class="admin-btn-remove" title="Remove">&times;</button>
+    </div>
+  </template>
+
+  <template id="galleryRowTemplate">
+    <div class="admin-repeat-row" data-type="gallery">
+      <input type="text" class="gal-src" placeholder="assets/gallery/photo.jpg">
+      <input type="text" class="gal-alt" placeholder="Short description (for accessibility)">
+      <button type="button" class="admin-btn-remove" title="Remove">&times;</button>
+    </div>
+  </template>
+
+  <template id="teamRowTemplate">
+    <div class="admin-repeat-row admin-repeat-row--stacked" data-type="team">
+      <input type="text" class="team-name" placeholder="Name">
+      <input type="text" class="team-role" placeholder="Role, e.g. Batch Representative">
+      <input type="text" class="team-photo" placeholder="assets/team/photo.jpg">
+      <button type="button" class="admin-btn-remove" title="Remove">&times;</button>
+    </div>
+  </template>
+
+  <script src="admin.js"></script>
+</body>
+</html>
