@@ -1,0 +1,55 @@
+{
+  "hero": {
+    "eyebrow": "B.COM · 2026 — 2029",
+    "titleLine1": "WELCOME TO",
+    "titleLine2": "CASANOVA",
+    "subtitleLine1": "More Than A Batch.",
+    "subtitleLine2": "A Legacy."
+  },
+  "about": {
+    "eyebrow": "Est. 2026",
+    "title": "WHO WE ARE",
+    "paragraphs": [
+      "CASANOVA is the official digital identity of the B.Com 2026–2029 batch.",
+      "We are dreamers, creators, athletes, designers, leaders and future professionals — brought together by one classroom and shaped into one story.",
+      "This website preserves our memories, our achievements, and the journey we're building together, one year at a time."
+    ]
+  },
+  "stats": [
+    { "target": 65, "suffix": "+", "label": "Students" },
+    { "target": 20, "suffix": "+", "label": "Events" },
+    { "target": 500, "suffix": "+", "label": "Photos" },
+    { "target": 3, "suffix": "", "label": "Years Together" }
+  ],
+  "timeline": [
+    { "tag": "Year One", "title": "College Begins", "text": "New faces, new classrooms — the first chapter of CASANOVA is written." },
+    { "tag": "Orientation", "title": "Freshers", "text": "The night the batch stopped being strangers and became a family." },
+    { "tag": "Culture", "title": "Commerce Fest", "text": "Stalls, stages and spreadsheets — commerce came alive for three days." },
+    { "tag": "Sport", "title": "Sports Meet", "text": "Jerseys on, egos aside — CASANOVA competed as one team." },
+    { "tag": "Field Study", "title": "Industrial Visit", "text": "Textbooks met the real world, and the real world took notes back." },
+    { "tag": "Year Three", "title": "Farewell", "text": "Three years, one legacy — the final bow of the CASANOVA batch." }
+  ],
+  "gallery": [
+    { "src": "https://picsum.photos/seed/casanova1/600/800", "alt": "Batch memory 1" },
+    { "src": "https://picsum.photos/seed/casanova2/600/450", "alt": "Batch memory 2" },
+    { "src": "https://picsum.photos/seed/casanova3/600/700", "alt": "Batch memory 3" },
+    { "src": "https://picsum.photos/seed/casanova4/600/500", "alt": "Batch memory 4" },
+    { "src": "https://picsum.photos/seed/casanova5/600/780", "alt": "Batch memory 5" },
+    { "src": "https://picsum.photos/seed/casanova6/600/460", "alt": "Batch memory 6" },
+    { "src": "https://picsum.photos/seed/casanova7/600/640", "alt": "Batch memory 7" },
+    { "src": "https://picsum.photos/seed/casanova8/600/520", "alt": "Batch memory 8" },
+    { "src": "https://picsum.photos/seed/casanova9/600/720", "alt": "Batch memory 9" }
+  ],
+  "team": [
+    { "name": "Aarav Menon", "role": "Batch Representative", "photo": "assets/team/member1.jpg" },
+    { "name": "Diya Nair", "role": "Creative Director", "photo": "assets/team/member2.jpg" },
+    { "name": "Rohan Iyer", "role": "Events Lead", "photo": "assets/team/member3.jpg" },
+    { "name": "Meera Pillai", "role": "Media & Design", "photo": "assets/team/member4.jpg" }
+  ],
+  "instagram": "https://www.instagram.com/casanova.stc?igsh=MTZ1NHF5aTlxZDFnag==",
+  "footer": {
+    "quote": "Every legend begins as a batch.",
+    "credit": "Crafted with ❤️ by CASANOVA",
+    "meta": "B.Com 2026 — 2029"
+  }
+}
